@@ -6,9 +6,9 @@
      ping:
    - name: update packages on ubuntu
      apt:
-       name: nginx
-       update_cache: yes
-   - name: removing the nginx
+       name: git
+       state: present
+   - name: Installing Tree
      apt:
-       name : nginx
-       state: absent   
+       name: tree
+       state: present
