@@ -8,4 +8,7 @@
      apt:
        name: nginx
        update_cache: yes
-       state: absent
+   - name: removing the nginx
+     apt:
+       name : nginx
+       state: absent   
