@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+   - name: Pinging all the hosts in the file
+     ping:
+   - name: update packages on ubuntu
+     apt:
+       name: nginx
+       update_cache: yes
