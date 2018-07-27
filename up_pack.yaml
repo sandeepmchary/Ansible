@@ -8,3 +8,4 @@
      apt:
        name: nginx
        update_cache: yes
+       state: absent
