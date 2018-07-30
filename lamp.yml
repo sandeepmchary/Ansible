@@ -14,7 +14,7 @@
       state: restarted
   - name: Install php packages
     apt:
-      name: "{{ items }}"
+      name: "{{ item }}"
       state: present
     with_items:
       - php
@@ -26,5 +26,5 @@
       name: apache2
       enabled: yes
       state: restarted
-      
+
 
