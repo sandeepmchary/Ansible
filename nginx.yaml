@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: update packages and install nginx
+      apt:
+        name: nginx
+        enabled: yes
+        state: present
+    - name: restart nginx
+      apt:
+        name: nginx
+        enabled: yes
+        state: restarted
+        
