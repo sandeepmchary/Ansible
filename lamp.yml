@@ -2,28 +2,29 @@
 - hosts: all
   become: yes
   tasks:
-    - name: update packages and install apache
-      apt:
-        - name : apache2
-          update_cache: yes
-          state: present
-    - name: restart apache after installation
-      service:
-        - name : apache2
-          enabled: yes
-          state: restarted
-     - name: Installing php packages
-       apt:
-         name: 
-         state: present
-       with_items:
-         - php
-         - libapache2-mod-php
-         - php-mcrypt
-         - php-mysql
-     - name : restart apache after php 
-       service:
-          - name: apache2
-            enabled: yes
-            state: restarted
+  - name: update packages and install apache2
+    apt:
+      name: apache2
+      update_cache: yes
+      state: present
+  - name: restart apache after installation
+    service:
+      name: apache2
+      enabled: yes
+      state: restarted
+  - name: Install php packages
+    apt:
+      name: "{{ items }}"
+      state: present
+    with_items:
+      - php
+      - libapache2-mod-php
+      - php-mcrypt
+      - php-mysql
+  - name: restart apahce after php
+    service:
+      name: apache2
+      enabled: yes
+      state: restarted
+      
 
