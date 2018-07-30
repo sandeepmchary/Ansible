@@ -1,5 +1,5 @@
 ---
--hosts: all
+- hosts: all
  become: yes
  tasks:
    - name: update packages and install apache
@@ -26,4 +26,4 @@
          - name: apache2
            enabled: yes
            state: restarted
-           
+
