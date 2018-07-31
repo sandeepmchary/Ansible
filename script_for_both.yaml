@@ -46,7 +46,10 @@
   - name : Download the infophp
     get_url:
       url: https://raw.githubusercontent.com/sandeepmchary/Ansible/master/info.php
-      dest: /var/www/html/info.php 
+      dest: /var/www/html/info.php
+    notify:
+      - restart apache
+      - restart httpd
   handlers:
   - name: restart apache
     service:
