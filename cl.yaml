@@ -21,7 +21,7 @@
     apt:
       name: "{{ item }}"
       state: present
-    with_item:
+    with_items:
       - php
       - libapache2-mod-php
       - php-mcrypt
