@@ -43,6 +43,10 @@
     notify:
     - restart httpd
     when: ansible_os_family == "RedHat"
+  - name : Download the infophp
+    get_url:
+      url: https://raw.githubusercontent.com/sandeepmchary/Ansible/master/info.php
+      dest: /var/www/html/info.php 
   handlers:
   - name: restart apache
     service:
