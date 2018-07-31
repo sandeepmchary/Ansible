@@ -58,4 +58,4 @@
       name: httpd
       enabled: yes
       state: restarted
-when: ansible_os_family == "RedHat"
+    when: ansible_os_family == "RedHat"
