@@ -12,7 +12,7 @@
     when: ansible_os_family == "Debian"
   - name: Install httpd
     yum:
-      name: install httpd
+      name:  httpd
       state: present
     notify:
     - restart httpd
