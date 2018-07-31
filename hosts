@@ -1,0 +1,17 @@
+ip-172-31-17-231.us-west-2.compute.internal
+
+[webserver]
+localhost
+ansible@ip-172-31-27-64:~$ [ubuntu]
+
+[redhat]
+ip-172-31-17-231.us-west-2.compute.internal
+
+[webserver]
+localhost
+
+[ubuntu:vars]
+pack_name = apache2
+
+[redhat:vars]
+pack_name = httpd
