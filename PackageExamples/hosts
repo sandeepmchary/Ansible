@@ -10,3 +10,11 @@ ip-172-31-19-55.us-west-2.compute.internal
 
 [webserver]
 localhost
+
+[ubuntu:vars]
+pack_name = apache2
+package_php = ["php","libapache2-mod-php","php-mcrypt","php-mysql"]
+
+[redhat:vars]
+pack_name = httpd 
+package_php = ["php","php-mysql"]

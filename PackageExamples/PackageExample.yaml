@@ -12,7 +12,7 @@
     package:
       name: "{{ item }}"
       state: present
-    with_items: "{{ package_php}}"
+    with_items: "{{ package_php }}"
     notify:
     - restart apache
   - name: download web page
