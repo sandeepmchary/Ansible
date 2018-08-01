@@ -1,14 +1,14 @@
-ip-172-31-17-231.us-west-2.compute.internal
-
-[webserver]
+[ubuntu]
 localhost
-ansible@ip-172-31-27-64:~$ [ubuntu]
+ip-172-31-23-136.us-west-2.compute.internal
+ip-172-31-46-12.us-west-2.compute.internal
 
 [redhat]
 ip-172-31-17-231.us-west-2.compute.internal
 
 [webserver]
 localhost
+
 
 [ubuntu:vars]
 pack_name = apache2
