@@ -2,7 +2,7 @@
 - hosts: all
   become: yes
   vars:
-    -myname: Template example
+    - myname: Template example
   tasks:
   - name: create a file with static content
     copy:
