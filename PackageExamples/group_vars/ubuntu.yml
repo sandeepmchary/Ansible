@@ -1,7 +1,7 @@
 ---
 pack_name: apache2
 package_php:
-  - php
-  - libapache2-mod-php
-  - php-mcrypt
-  - php-mysql
+- php
+- php-mcrypt
+- libapache2-mod-php
+- php-mysql
