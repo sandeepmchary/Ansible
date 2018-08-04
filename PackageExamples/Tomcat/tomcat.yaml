@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name : Install tomcat
+    package:
+    name: "{{ package_name }}"
+    state: present
+  - name: Download webpage
