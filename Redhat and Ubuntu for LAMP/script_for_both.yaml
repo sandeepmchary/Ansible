@@ -1,0 +1,65 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  # Installing apache for Ubuntu#
+  - name: update packages and install apache
+    apt:
+      name: apache2
+      enabled: yes
+      state: present
+    notify:
+    - restart apache
+    when: ansible_os_family == "Debian"
+    #Installing apache for RedHat#
+  - name: httpd
+    yum:
+      name: httpd
+      state: present
+    notify:
+    - restart httpd
+    when: ansible_os_family == "RedHat"
+    #Installing php packages for Ubuntu#
+  - name: Installing php Package
+    apt:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - php
+      - libapache2-mob-php
+      - php-mcrypt
+      - php-mysql
+    notify:
+    - restart apache
+    when: ansible_os_family == "Debian"
+    #Installing php for Redhat #
+  - name: Install php for RedHat
+    yum:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - php
+      - php-mysql
+    notify:
+    - restart httpd
+    when: ansible_os_family == "RedHat"
+  - name : Download the infophp
+    get_url:
+      url: https://raw.githubusercontent.com/sandeepmchary/Ansible/master/info.php
+      dest: /var/www/html/info.php
+    notify:
+      - restart apache
+      - restart httpd
+  handlers:
+  - name: restart apache
+    service:
+      name: apache2
+      enabled: yes
+      state: restarted
+    when: ansible_os_family == "Debian"
+  - name: restart httpd
+    service: 
+      name : httpd
+      enabled: yes
+      state: restarted
+    when: ansible_os_family == "RedHat "

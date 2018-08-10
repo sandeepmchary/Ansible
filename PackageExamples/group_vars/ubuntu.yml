@@ -1,0 +1,7 @@
+---
+pack_name: apache2
+package_php:
+- php
+- php-mcrypt
+- libapache2-mod-php
+- php-mysql
